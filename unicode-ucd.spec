@@ -1,17 +1,17 @@
 Summary:	Unicode Character Database
 Summary(pl.UTF-8):	Unicode Character Database - baza danych znaków Unicode
 Name:		unicode-ucd
-Version:	12.1.0
+Version:	13.0.0
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://www.unicode.org/Public/zipped/%{version}/UCD.zip
-# Source0-md5:	430cbdac2615451571dd69a976dd08f6
+# Source0-md5:	23f7bf8cc99adef525718b2bee0867ba
 Source1:	http://www.unicode.org/Public/zipped/%{version}/Unihan.zip
-# Source1-md5:	55a93848bb2810b942d607e55ad01bf3
+# Source1-md5:	1e7f8b6bf1cf69d3602fe91f97aaee01
 # http://www.unicode.org/terms_of_use.html referenced in ReadMe.txt redirects to:
 Source2:	http://www.unicode.org/copyright.html
-# Source2-md5:	01c7e36383a1654909592aa0f9ba977e
+# Source2-md5:	8f660ece069ca15904aaf37df72f8094
 URL:		http://www.unicode.org/ucd/
 BuildRequires:	unzip
 BuildArch:	noarch
@@ -73,15 +73,17 @@ chińskie znaki Hanzi/Kanji/Hanja.
 
 cp -p %{SOURCE2} .
 
+%{__mv} emoji/ReadMe.txt ReadMe-emoji.txt
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/unicode/ucd
 
-cp -pr *.txt auxiliary extracted $RPM_BUILD_ROOT%{_datadir}/unicode/ucd
+cp -pr *.txt auxiliary emoji extracted $RPM_BUILD_ROOT%{_datadir}/unicode/ucd
 cp -p %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/unicode/ucd
 
 # packaged as %doc
-%{__rm} $RPM_BUILD_ROOT%{_datadir}/unicode/ucd/ReadMe.txt
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/unicode/ucd/ReadMe*.txt
 %{__rm} $RPM_BUILD_ROOT%{_datadir}/unicode/ucd/auxiliary/*.html
 
 %clean
@@ -89,7 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc NamesList.html ReadMe.txt copyright.html
+%doc NamesList.html ReadMe.txt ReadMe-emoji.txt copyright.html
 %dir %{_datadir}/unicode
 %dir %{_datadir}/unicode/ucd
 %{_datadir}/unicode/ucd/ArabicShaping.txt
@@ -132,6 +134,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/unicode/ucd/auxiliary/GraphemeBreakProperty.txt
 %{_datadir}/unicode/ucd/auxiliary/SentenceBreakProperty.txt
 %{_datadir}/unicode/ucd/auxiliary/WordBreakProperty.txt
+%dir %{_datadir}/unicode/ucd/emoji
+%{_datadir}/unicode/ucd/emoji/emoji-data.txt
+%{_datadir}/unicode/ucd/emoji/emoji-variation-sequences.txt
 %{_datadir}/unicode/ucd/extracted
 
 %files testdata
