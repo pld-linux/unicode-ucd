@@ -1,17 +1,17 @@
 Summary:	Unicode Character Database
 Summary(pl.UTF-8):	Unicode Character Database - baza danych znaków Unicode
 Name:		unicode-ucd
-Version:	13.0.0
+Version:	15.1.0
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://www.unicode.org/Public/zipped/%{version}/UCD.zip
-# Source0-md5:	23f7bf8cc99adef525718b2bee0867ba
+# Source0-md5:	a269471d114035004d071df966018d93
 Source1:	http://www.unicode.org/Public/zipped/%{version}/Unihan.zip
-# Source1-md5:	1e7f8b6bf1cf69d3602fe91f97aaee01
+# Source1-md5:	08321a1a9909ce7f4400218fdcd819df
 # http://www.unicode.org/terms_of_use.html referenced in ReadMe.txt redirects to:
 Source2:	http://www.unicode.org/copyright.html
-# Source2-md5:	8f660ece069ca15904aaf37df72f8094
+# Source2-md5:	2964e624a6b7b155938b0b29c6c5b0ec
 URL:		http://www.unicode.org/ucd/
 BuildRequires:	unzip
 BuildArch:	noarch
