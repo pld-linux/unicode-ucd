@@ -1,17 +1,17 @@
 Summary:	Unicode Character Database
 Summary(pl.UTF-8):	Unicode Character Database - baza danych znaków Unicode
 Name:		unicode-ucd
-Version:	15.1.0
+Version:	16.0.0
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://www.unicode.org/Public/zipped/%{version}/UCD.zip
-# Source0-md5:	a269471d114035004d071df966018d93
+# Source0-md5:	bdd823cbd37c376633d6737a12281233
 Source1:	http://www.unicode.org/Public/zipped/%{version}/Unihan.zip
-# Source1-md5:	08321a1a9909ce7f4400218fdcd819df
+# Source1-md5:	aa81fdcb61759c4b8316f2c43d24fc5e
 # http://www.unicode.org/terms_of_use.html referenced in ReadMe.txt redirects to:
 Source2:	http://www.unicode.org/copyright.html
-# Source2-md5:	2964e624a6b7b155938b0b29c6c5b0ec
+# Source2-md5:	fef3e0b8887eefcb26e7dd2b52b8aa83
 URL:		http://www.unicode.org/ucd/
 BuildRequires:	unzip
 BuildArch:	noarch
@@ -104,6 +104,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/unicode/ucd/DerivedAge.txt
 %{_datadir}/unicode/ucd/DerivedCoreProperties.txt
 %{_datadir}/unicode/ucd/DerivedNormalizationProps.txt
+%{_datadir}/unicode/ucd/DoNotEmit.txt
 %{_datadir}/unicode/ucd/EastAsianWidth.txt
 %{_datadir}/unicode/ucd/EmojiSources.txt
 %{_datadir}/unicode/ucd/EquivalentUnifiedIdeograph.txt
@@ -129,6 +130,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/unicode/ucd/TangutSources.txt
 %{_datadir}/unicode/ucd/USourceData.txt
 %{_datadir}/unicode/ucd/UnicodeData.txt
+%{_datadir}/unicode/ucd/Unikemet.txt
 %{_datadir}/unicode/ucd/VerticalOrientation.txt
 %dir %{_datadir}/unicode/ucd/auxiliary
 %{_datadir}/unicode/ucd/auxiliary/GraphemeBreakProperty.txt
